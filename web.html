@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>WEB UPC MARC HIDALGO</title>
+    <div class="container">
+        <div class="jumbotron" >
+            <h1 class="text-center">GITHUB</h1>.
+            <p class="text-center">REPOSITORIOS </p>.
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+        var url = "https://api.github.com/users/" + $("#test3").val();
+            $("#test1").text(url);
+            $.get(url, function(data){
+            $( "#name" ).text(data.name ) // followers
+            $( "#description" ).text(data.bio ) //  description
+            $( "#followers" ).text(data.followers ) //  name
+            $( "#repositorios" ).text(data.public_repos ); //  repositorios
+
+                }, "json" );
+        });
+    });
+    </script>
+
+
+</head>
+<body>
+<p>Github user: <input type="text" id="test3" value="marchiba99"></p>
+<button id="btn">Enviar</button>
+<p id="test1">This is a paragraph.</p>
+
+<h2>TABLE</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Follower</th>
+        <th>Repositorios</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td id="name">Nombre</td>
+        <td id="description">descripcion</td>
+        <td id="followers">followers</td>
+        <td id="repositorios">repositorios</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
